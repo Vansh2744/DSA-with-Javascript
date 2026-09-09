@@ -95,17 +95,38 @@
 
 //-------------------------Best time to sell stock---------------
 
-function bestTime(arr) {
-  let best = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      const profit = arr[j] - arr[i];
-      if (profit > best) {
-        best = profit;
-      }
+// function maxProfit(arr) {
+//   let best = 0;
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       const profit = arr[j] - arr[i];
+//       if (profit > best) {
+//         best = profit;
+//       }
+//     }
+//   }
+//   return best;
+// }
+
+// console.log(bestTime([7, 1, 5, 3, 6, 4]));
+
+//-----------------------Using Greedy Approach----------------------
+
+function maxProfit(arr) {
+  let min = arr[0];
+  let profit = 0;
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    const currentProfit = arr[i] - min;
+    if (currentProfit > profit) {
+      profit = currentProfit;
     }
   }
-  return best;
+
+  return profit;
 }
 
-console.log(bestTime([7, 1, 5, 3, 6, 4]));
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
