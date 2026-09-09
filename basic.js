@@ -93,4 +93,19 @@
 
 // console.log(twoSum([2, 3, 4, 7, 9], 9));
 
-//----------------------------------------
+//-------------------------Best time to sell stock---------------
+
+function bestTime(arr) {
+  let best = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      const profit = arr[j] - arr[i];
+      if (profit > best) {
+        best = profit;
+      }
+    }
+  }
+  return best;
+}
+
+console.log(bestTime([7, 1, 5, 3, 6, 4]));
