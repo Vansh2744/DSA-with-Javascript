@@ -112,21 +112,30 @@
 
 //-----------------------Using Greedy Approach----------------------
 
-function maxProfit(arr) {
-  let min = arr[0];
-  let profit = 0;
+// function maxProfit(arr) {
+//   let min = arr[0];
+//   let profit = 0;
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < min) {
-      min = arr[i];
-    }
-    const currentProfit = arr[i] - min;
-    if (currentProfit > profit) {
-      profit = currentProfit;
-    }
-  }
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < min) {
+//       min = arr[i];
+//     }
+//     const currentProfit = arr[i] - min;
+//     if (currentProfit > profit) {
+//       profit = currentProfit;
+//     }
+//   }
 
-  return profit;
-}
+//   return profit;
+// }
 
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+const arr = [45, 56, 90, 45, 60, 56, 56];
+
+const res = arr.reduce((acc, curr) => {
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(res);
