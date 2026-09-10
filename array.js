@@ -227,12 +227,58 @@
 //     }
 //   }
 
-//   return arr;
+//   return arr.length;
 // }
 
 // const arr = [0, 0, 0, 0, 1, 2, 2, 2, 4, 4, 5, 6];
 
 // console.log(removeDuplicates(arr));
 
+//----------------------------Using Two Pointers-----------------------------------
 
-//---------------------------------------------------------------
+// function removeDuplicates(arr) {
+//   let i = 0;
+
+//   for (let j = 1; j < arr.length; j++) {
+//     if (arr[i] != arr[j]) {
+//       i++;
+//       arr[i] = arr[j];
+//     }
+//   }
+
+//   return i + 1;
+// }
+
+// const arr = [0, 0, 0, 0, 1, 2, 2, 2, 4, 4, 5, 6];
+
+// console.log(removeDuplicates(arr));
+
+//----------------------------Maximum sum of subarray------------------------------
+
+function maxSumSubArray(arr) {
+  let maxSum = arr[0];
+  let s = 0;
+  let e = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let j = i; j < arr.length; j++) {
+      sum += arr[j];
+      if (sum > maxSum) {
+        maxSum = sum;
+        s = i;
+        e = j;
+      }
+    }
+  }
+
+  const resArr = arr.slice(s, e + 1);
+  return [maxSum, resArr];
+}
+
+const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+const [sum, resArr] = maxSumSubArray(arr);
+
+console.log("Array : ", resArr);
+console.log("Sum : ", sum);
