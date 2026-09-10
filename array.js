@@ -187,32 +187,52 @@
 
 //----------------------------------------------------
 
-function rotateArray(arr, rot) {
-  const size = arr.length;
+// function rotateArray(arr, rot) {
+//   const size = arr.length;
 
-  if (rot > size) {
-    rot = rot % size;
-  }
+//   if (rot > size) {
+//     rot = rot % size;
+//   }
 
-  reverseArr(arr, 0, size - 1);
+//   reverseArr(arr, 0, size - 1);
 
-  reverseArr(arr, 0, size - rot - 1);
+//   reverseArr(arr, 0, rot - 1);
 
-  reverseArr(arr, size - rot, size - 1);
+//   reverseArr(arr, rot, size - 1);
 
-  return arr;
-}
+//   return arr;
+// }
 
-function reverseArr(arr, l, r) {
-  while (l < r) {
-    let temp = arr[r];
-    arr[r] = arr[l];
-    arr[l] = temp;
-    l++;
-    r--;
-  }
-}
+// function reverseArr(arr, l, r) {
+//   while (l < r) {
+//     let temp = arr[r];
+//     arr[r] = arr[l];
+//     arr[l] = temp;
+//     l++;
+//     r--;
+//   }
+// }
 
-const nums = [1, 2, 3, 4, 5, 6];
+// const nums = [1, 2, 3, 4, 5, 6];
 
-console.log(rotateArray(nums, 6));
+// console.log(rotateArray(nums, 6));
+
+//-----------------Remove Duplicate values-------------------
+
+// function removeDuplicates(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] == arr[i - 1]) {
+//       arr.splice(i, 1);
+//       i--;
+//     }
+//   }
+
+//   return arr;
+// }
+
+// const arr = [0, 0, 0, 0, 1, 2, 2, 2, 4, 4, 5, 6];
+
+// console.log(removeDuplicates(arr));
+
+
+//---------------------------------------------------------------
