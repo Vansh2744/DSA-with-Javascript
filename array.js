@@ -87,7 +87,7 @@
 
 // console.log(arr1.concat(arr2).concat(45).concat(90));
 
-const arr = [34, 56, 78, 90, 12, 78];
+// const arr = [34, 56, 78, 90, 12, 78];
 
 // console.log(arr.slice(0, 4));
 // console.log(arr.slice(-4));
@@ -97,3 +97,22 @@ const arr = [34, 56, 78, 90, 12, 78];
 // arr.splice(0,2,10);
 // console.log(arr);
 
+// arr.fill(0)
+// arr.fill(0, 3)
+// arr.fill(2, 3)
+// arr.fill("vansh", 3);
+
+// console.log(arr);
+
+// console.log(arr.indexOf(34));
+
+// const index = arr.findIndex((item) => item === 90);
+
+// console.log(index);
+
+const arr = [
+  [2, 3, 4, 5],
+  [6, 7, 8, 9],
+];
+
+console.log(arr.flat());
