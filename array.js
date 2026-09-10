@@ -11,19 +11,33 @@
 
 //----------------Group Objects by Property-----------
 
-const users = [
-  { name: "Vansh", city: "Delhi" },
-  { name: "Rahul", city: "Mumbai" },
-  { name: "Aman", city: "Delhi" },
-  { name: "Riya", city: "Pune" },
+// const users = [
+//   { name: "Vansh", city: "Delhi" },
+//   { name: "Rahul", city: "Mumbai" },
+//   { name: "Aman", city: "Delhi" },
+//   { name: "Riya", city: "Pune" },
+// ];
+
+// const res = users.reduce((acc, curr) => {
+//   if (!acc[curr.city]) {
+//     acc[curr.city] = [];
+//   }
+//   acc[curr.city].push(curr);
+//   return acc;
+// }, {});
+
+// console.log(res);
+
+//-----------------Flatten nested Array------------------
+
+const numbers = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
 ];
 
-const res = users.reduce((acc, curr) => {
-  if (!acc[curr.city]) {
-    acc[curr.city] = [];
-  }
-  acc[curr.city].push(curr);
-  return acc;
-}, {});
+const res = numbers.reduce((acc, curr) => {
+  return acc.concat(curr);
+}, []);
 
 console.log(res);
