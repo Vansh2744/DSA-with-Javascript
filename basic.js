@@ -131,11 +131,13 @@
 
 // console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
-const arr = [45, 56, 90, 45, 60, 56, 56];
+//------------------------------------------------
 
-const res = arr.reduce((acc, curr) => {
-  acc[curr] = (acc[curr] || 0) + 1;
-  return acc;
-}, {});
+// const arr = [45, 56, 90, 45, 60, 56, 56];
 
-console.log(res);
+// const res = arr.reduce((acc, curr) => {
+//   acc[curr] = (acc[curr] || 0) + 1;
+//   return acc;
+// }, {});
+
+// console.log(res);
