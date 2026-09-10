@@ -168,6 +168,25 @@
 
 //-----------------Rotate Array--------------------
 
+// function rotateArray(arr, rot) {
+//   const size = arr.length;
+
+//   if (rot > size) {
+//     rot = rot % size;
+//   }
+
+//   const rest = arr.splice(size - rot, size);
+//   arr.unshift(...rest);
+
+//   return arr;
+// }
+
+// const nums = [1, 2, 3, 4, 5, 6];
+
+// console.log(rotateArray(nums, 7));
+
+//----------------------------------------------------
+
 function rotateArray(arr, rot) {
   const size = arr.length;
 
@@ -175,12 +194,25 @@ function rotateArray(arr, rot) {
     rot = rot % size;
   }
 
-  const rest = arr.splice(size - rot, size);
-  arr.unshift(...rest);
+  reverseArr(arr, 0, size - 1);
+
+  reverseArr(arr, 0, size - rot - 1);
+
+  reverseArr(arr, size - rot, size - 1);
 
   return arr;
 }
 
+function reverseArr(arr, l, r) {
+  while (l < r) {
+    let temp = arr[r];
+    arr[r] = arr[l];
+    arr[l] = temp;
+    l++;
+    r--;
+  }
+}
+
 const nums = [1, 2, 3, 4, 5, 6];
 
-console.log(rotateArray(nums, 7));
+console.log(rotateArray(nums, 6));
