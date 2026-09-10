@@ -59,8 +59,17 @@
 
 //--------------------Some-----------------------
 
+// const arr = [12, 34, 56, 78, 20];
+
+// const res = arr.some((val) => val > 70);
+
+// console.log(res);
+
+
+//---------------------Every-----------------------
+
 const arr = [12, 34, 56, 78, 20];
 
-const res = arr.some((val) => val > 70);
+const res = arr.every((val) => val > 10);
 
 console.log(res);
