@@ -146,22 +146,41 @@
 
 //------------------Second Largest Element-----------------
 
-function findSecondLargest(arr) {
-  let firstLargest = -1;
-  let secondLargest = -1;
+// function findSecondLargest(arr) {
+//   let firstLargest = Number.NEGATIVE_INFINITY;
+//   let secondLargest = Number.NEGATIVE_INFINITY;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > firstLargest) {
-      secondLargest = firstLargest;
-      firstLargest = arr[i];
-    } else if (secondLargest != firstLargest && secondLargest < arr[i]) {
-      secondLargest = arr[i];
-    }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > firstLargest) {
+//       secondLargest = firstLargest;
+//       firstLargest = arr[i];
+//     } else if (secondLargest != firstLargest && secondLargest < arr[i]) {
+//       secondLargest = arr[i];
+//     }
+//   }
+
+//   return secondLargest;
+// }
+
+// const arr = [23, 45, 100, 99, 78, 999, 1000];
+
+// console.log(findSecondLargest(arr));
+
+//-----------------Rotate Array--------------------
+
+function rotateArray(arr, rot) {
+  const size = arr.length;
+
+  if (rot > size) {
+    rot = rot % size;
   }
 
-  return secondLargest;
+  const rest = arr.splice(size - rot, size);
+  arr.unshift(...rest);
+
+  return arr;
 }
 
-const arr = [23, 45, 100, 99, 78, 999, 1000];
+const nums = [1, 2, 3, 4, 5, 6];
 
-console.log(findSecondLargest(arr));
+console.log(rotateArray(nums, 7));
