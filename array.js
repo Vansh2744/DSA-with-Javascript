@@ -65,11 +65,35 @@
 
 // console.log(res);
 
-
 //---------------------Every-----------------------
 
-const arr = [12, 34, 56, 78, 20];
+// const arr = [12, 34, 56, 78, 20];
 
-const res = arr.every((val) => val > 10);
+// const res = arr.every((val) => val > 10);
 
-console.log(res);
+// console.log(res);
+
+//-----------------------------
+
+// const arr1 = [23, 45, 67, 78];
+// const arr2 = [10, 20, 30, 40, 50];
+
+// const arr = [...arr1, ...arr2];
+
+// console.log(arr);
+
+// const arr1 = [23,45,67]
+// const arr2 = [56,78,89,90]
+
+// console.log(arr1.concat(arr2).concat(45).concat(90));
+
+const arr = [34, 56, 78, 90, 12, 78];
+
+// console.log(arr.slice(0, 4));
+// console.log(arr.slice(-4));
+// console.log(arr.slice(-1));
+
+// arr.splice(0,2);
+// arr.splice(0,2,10);
+// console.log(arr);
+
