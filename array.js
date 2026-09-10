@@ -110,9 +110,58 @@
 
 // console.log(index);
 
-const arr = [
-  [2, 3, 4, 5],
-  [6, 7, 8, 9],
-];
+// const arr = [
+//   [2, 3, 4, 5],
+//   [6, 7, 8, 9],
+// ];
 
-console.log(arr.flat());
+// console.log(arr.flat());
+
+// const arr = [
+//   [
+//     [2, 3, 4],
+//     [5, 6, 7],
+//   ],
+//   [
+//     [8, 9, 10],
+//     [11, 12, 13],
+//   ],
+// ];
+
+// console.log(arr.flat(2));
+
+// const arr = [23, 15, 67, 89, 90];
+
+// arr.reverse()
+
+// console.log(arr);
+
+// arr.sort()
+
+// console.log(arr);
+
+// arr.sort((a, b) => a - b);
+// arr.sort((a, b) => b - a);
+// console.log(arr);
+
+//------------------Second Largest Element-----------------
+
+function findSecondLargest(arr) {
+  let firstLargest = -1;
+  let secondLargest = -1;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > firstLargest) {
+      secondLargest = firstLargest;
+      firstLargest = arr[i];
+    } else if (secondLargest != firstLargest && secondLargest < arr[i]) {
+      secondLargest = arr[i];
+    }
+  }
+
+  return secondLargest;
+}
+
+const arr = [23, 45, 100, 99, 78, 999, 1000];
+
+console.log(findSecondLargest(arr));
