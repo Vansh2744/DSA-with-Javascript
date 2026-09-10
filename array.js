@@ -30,14 +30,29 @@
 
 //-----------------Flatten nested Array------------------
 
-const numbers = [
-  [1, 2],
-  [3, 4],
-  [5, 6],
-];
+// const numbers = [
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ];
+
+// const res = numbers.reduce((acc, curr) => {
+//   return acc.concat(curr);
+// }, []);
+
+// console.log(res);
+
+//-------------------Remove Duplicates--------------------
+
+const numbers = [1, 2, 2, 3, 4, 4, 5];
 
 const res = numbers.reduce((acc, curr) => {
-  return acc.concat(curr);
+  if (acc.includes(curr)) {
+    return acc;
+  } else {
+    acc.push(curr);
+    return acc;
+  }
 }, []);
 
 console.log(res);
