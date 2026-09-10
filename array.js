@@ -44,15 +44,23 @@
 
 //-------------------Remove Duplicates--------------------
 
-const numbers = [1, 2, 2, 3, 4, 4, 5];
+// const numbers = [1, 2, 2, 3, 4, 4, 5];
 
-const res = numbers.reduce((acc, curr) => {
-  if (acc.includes(curr)) {
-    return acc;
-  } else {
-    acc.push(curr);
-    return acc;
-  }
-}, []);
+// const res = numbers.reduce((acc, curr) => {
+//   if (acc.includes(curr)) {
+//     return acc;
+//   } else {
+//     acc.push(curr);
+//     return acc;
+//   }
+// }, []);
+
+// console.log(res);
+
+//--------------------Some-----------------------
+
+const arr = [12, 34, 56, 78, 20];
+
+const res = arr.some((val) => val > 70);
 
 console.log(res);
