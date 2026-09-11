@@ -11,11 +11,25 @@
 
 //---------------Factorial of a number----------------------
 
-function findFact(num) {
-  if (num == 1) {
-    return 1;
+// function findFact(num) {
+//   if (num == 1) {
+//     return 1;
+//   }
+//   return num * findFact(num - 1);
+// }
+
+// console.log(findFact(5));
+
+//----------------Range of a Numbers------------------------
+
+function rangeOfNumbers(s, e) {
+  if (s > e) {
+    return [];
+  } else {
+    let numbers = rangeOfNumbers(s, e - 1);
+    numbers.push(e);
+    return numbers;
   }
-  return num * findFact(num - 1);
 }
 
-console.log(findFact(5));
+console.log(rangeOfNumbers(0, 5));
