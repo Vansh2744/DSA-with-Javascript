@@ -283,6 +283,8 @@
 // console.log("Array : ", resArr);
 // console.log("Sum : ", sum);
 
+//---------------------Using Kadane's Algorithm----------------
+
 function maxSumSubArray(arr) {
   let maxSum = arr[0];
   let sum = 0;
