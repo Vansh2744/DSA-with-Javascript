@@ -1,20 +1,8 @@
-function secondLargest(arr) {
-  let firstL = Number.NEGATIVE_INFINITY;
-  let secondL = Number.NEGATIVE_INFINITY;
-
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > firstL) {
-      secondL = firstL;
-      firstL = arr[i];
-    }
-    if (arr[i] != firstL && secondL < arr[i]) {
-      secondL = arr[i];
-    }
+function mulArr(arr) {
+  if (arr.length <= 0) {
+    return 0;
   }
-
-  return secondL;
+  return arr[0] + mulArr(arr.slice(1));
 }
 
-const arr = [23, 456, 67, 78, 400];
-
-console.log(secondLargest(arr));
+console.log(mulArr([1, 2, 3, 4, 5, 10]));
