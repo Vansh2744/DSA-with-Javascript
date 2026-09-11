@@ -255,24 +255,56 @@
 
 //----------------------------Maximum sum of subarray------------------------------
 
+// function maxSumSubArray(arr) {
+//   let maxSum = arr[0];
+//   let s = 0;
+//   let e = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let sum = 0;
+//     for (let j = i; j < arr.length; j++) {
+//       sum += arr[j];
+//       if (sum > maxSum) {
+//         maxSum = sum;
+//         s = i;
+//         e = j;
+//       }
+//     }
+//   }
+
+//   const resArr = arr.slice(s, e + 1);
+//   return [maxSum, resArr];
+// }
+
+// const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+// const [sum, resArr] = maxSumSubArray(arr);
+
+// console.log("Array : ", resArr);
+// console.log("Sum : ", sum);
+
 function maxSumSubArray(arr) {
   let maxSum = arr[0];
+  let sum = 0;
   let s = 0;
   let e = 0;
+  let tempS = 0;
 
   for (let i = 0; i < arr.length; i++) {
-    let sum = 0;
-    for (let j = i; j < arr.length; j++) {
-      sum += arr[j];
-      if (sum > maxSum) {
-        maxSum = sum;
-        s = i;
-        e = j;
-      }
+    sum += arr[i];
+    if (sum < 0) {
+      sum = 0;
+      tempS = i + 1;
+    }
+    if (sum > maxSum) {
+      maxSum = sum;
+      s = tempS;
+      e = i;
     }
   }
 
   const resArr = arr.slice(s, e + 1);
+
   return [maxSum, resArr];
 }
 
