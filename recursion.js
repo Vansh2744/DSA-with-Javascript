@@ -22,14 +22,30 @@
 
 //----------------Range of a Numbers------------------------
 
-function rangeOfNumbers(s, e) {
-  if (s > e) {
-    return [];
-  } else {
-    let numbers = rangeOfNumbers(s, e - 1);
-    numbers.push(e);
-    return numbers;
+// function rangeOfNumbers(s, e) {
+//   if (s > e) {
+//     return [];
+//   } else {
+//     let numbers = rangeOfNumbers(s, e - 1);
+//     numbers.push(e);
+//     return numbers;
+//   }
+// }
+
+// console.log(rangeOfNumbers(0, 5));
+
+//------------------Palindrome-----------------------
+
+function palidromNumber(num) {
+  const original = num;
+  function reverse(n, rev = 0) {
+    if (n === 0) return rev;
+    return reverse(Math.floor(n / 10), rev * 10 + (n % 10));
   }
+
+  return original === reverse(num);
 }
 
-console.log(rangeOfNumbers(0, 5));
+console.log(palidromNumber(121));
+console.log(palidromNumber(1221));
+console.log(palidromNumber(12281));
