@@ -61,3 +61,21 @@
 // }
 
 // console.log(fib(6));
+
+//----------------Log series-------------------------
+
+function printFibonacci(num) {
+  function fib(num) {
+    if (num <= 1) {
+      return num;
+    }
+
+    return fib(num - 1) + fib(num - 2);
+  }
+
+  for (let i = 0; i < num; i++) {
+    console.log(fib(i));
+  }
+}
+
+printFibonacci(5);
