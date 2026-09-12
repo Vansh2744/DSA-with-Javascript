@@ -36,16 +36,28 @@
 
 //------------------Palindrome-----------------------
 
-function palidromNumber(num) {
-  const original = num;
-  function reverse(n, rev = 0) {
-    if (n === 0) return rev;
-    return reverse(Math.floor(n / 10), rev * 10 + (n % 10));
-  }
+// function palidromNumber(num) {
+//   const original = num;
+//   function reverse(n, rev = 0) {
+//     if (n === 0) return rev;
+//     return reverse(Math.floor(n / 10), rev * 10 + (n % 10));
+//   }
 
-  return original === reverse(num);
-}
+//   return original === reverse(num);
+// }
 
-console.log(palidromNumber(121));
-console.log(palidromNumber(1221));
-console.log(palidromNumber(12281));
+// console.log(palidromNumber(121));
+// console.log(palidromNumber(1221));
+// console.log(palidromNumber(12281));
+
+//------------------Fibonacci series--------------------
+
+// function fib(num) {
+//   if (num <= 1) {
+//     return num;
+//   }
+
+//   return fib(num - 1) + fib(num - 2);
+// }
+
+// console.log(fib(6));
