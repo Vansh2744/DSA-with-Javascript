@@ -64,18 +64,35 @@
 
 //----------------Log series-------------------------
 
-function printFibonacci(num) {
-  function fib(num) {
-    if (num <= 1) {
-      return num;
-    }
+// function printFibonacci(num) {
+//   function fib(num) {
+//     if (num <= 1) {
+//       return num;
+//     }
 
-    return fib(num - 1) + fib(num - 2);
+//     return fib(num - 1) + fib(num - 2);
+//   }
+
+//   for (let i = 0; i < num; i++) {
+//     console.log(fib(i));
+//   }
+// }
+
+// printFibonacci(5);
+
+//-----------------Without Recursion----------------------
+
+function fib(num) {
+  let arr = [0, 1];
+
+  for (let i = 2; i <= num; i++) {
+    arr.push(arr[i - 1] + arr[i - 2]);
   }
 
-  for (let i = 0; i < num; i++) {
-    console.log(fib(i));
-  }
+  return [arr, arr[num]];
 }
 
-printFibonacci(5);
+const [arr, res] = fib(5);
+
+console.log("Series: ", arr);
+console.log("Result: ", res);
