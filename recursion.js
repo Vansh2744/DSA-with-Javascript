@@ -82,17 +82,28 @@
 
 //-----------------Without Recursion----------------------
 
-function fib(num) {
-  let arr = [0, 1];
+// function fib(num) {
+//   let arr = [0, 1];
 
-  for (let i = 2; i <= num; i++) {
-    arr.push(arr[i - 1] + arr[i - 2]);
+//   for (let i = 2; i <= num; i++) {
+//     arr.push(arr[i - 1] + arr[i - 2]);
+//   }
+
+//   return [arr, arr[num]];
+// }
+
+// const [arr, res] = fib(5);
+
+// console.log("Series: ", arr);
+// console.log("Result: ", res);
+
+//---------------Reverse String-------------------
+
+function reverseString(inputString) {
+  if (inputString === "") {
+    return "";
   }
-
-  return [arr, arr[num]];
+  return reverseString(inputString.substring(1)) + inputString.charAt(0);
 }
 
-const [arr, res] = fib(5);
-
-console.log("Series: ", arr);
-console.log("Result: ", res);
+console.log(reverseString("Hello"));
