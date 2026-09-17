@@ -48,21 +48,51 @@
 
 //-------------Reverse Order Of Words---------------
 
-function reverseOrder(str: string): string {
-  let trimmedStr: string = str.trim();
+// function reverseOrder(str: string): string {
+//   let trimmedStr: string = str.trim();
 
-  let strArr: string[] = trimmedStr.split(" ");
+//   let strArr: string[] = trimmedStr.split(" ");
 
-  let result: string[] = [];
+//   let result: string[] = [];
 
-  while (strArr.length > 0) {
-    const popStr: string = strArr.pop() as string;
-    if (popStr) {
-      result.push(popStr);
+//   while (strArr.length > 0) {
+//     const popStr: string = strArr.pop() as string;
+//     if (popStr) {
+//       result.push(popStr);
+//     }
+//   }
+
+//   return result.join(" ");
+// }
+
+// console.log(reverseOrder("   How are           you     "));
+// const end = performance.now();
+
+//---------------Valid Paranthesis---------------
+
+function isValid(str: string): boolean {
+  let stack: string[] = [];
+  const openBrackets: string[] = ["(", "{", "["];
+  const closeBrackets: string[] = [")", "}", "]"];
+
+  const splittedArr: string[] = str.split("");
+
+  for (let i of splittedArr) {
+    if (openBrackets.includes(i)) {
+      stack.push(i);
+    } else if (closeBrackets.includes(i)) {
+      if (stack.length === 0) {
+        return false;
+      } else if (
+        closeBrackets.indexOf(i) ===
+        openBrackets.indexOf(stack[stack.length - 1])
+      ) {
+        stack.pop();
+      }
     }
   }
 
-  return result.join(" ");
+  return stack.length === 0;
 }
 
-console.log(reverseOrder("   How are           you     "));
+console.log(isValid("(()){()}[][{}]}"));
