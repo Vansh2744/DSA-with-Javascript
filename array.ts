@@ -50,17 +50,33 @@
 
 //------------------Remove Duplicates from Sorted Array----------------
 
-function removeDuplicates(arr: number[]): number[] {
-  let i = 0;
+// function removeDuplicates(arr: number[]): number[] {
+//   let i = 0;
 
-  for (let j = 1; j < arr.length; j++) {
-    if (arr[i] !== arr[j]) {
+//   for (let j = 1; j < arr.length; j++) {
+//     if (arr[i] !== arr[j]) {
+//       i++;
+//       arr[i] = arr[j];
+//     }
+//   }
+
+//   return arr.slice(0, i + 1);
+// }
+
+// console.log(removeDuplicates([23, 23, 23, 45, 45, 67, 89, 90, 90]));
+
+//--------------------Moving all zeroes to end--------------------
+
+function moveAllZerosToEnd(arr: number[]): number[] {
+  let i = 0;
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[j] !== 0) {
+      [arr[i], arr[j]] = [arr[j], arr[i]];
       i++;
-      arr[i] = arr[j];
     }
   }
 
-  return arr.slice(0, i + 1);
+  return arr;
 }
 
-console.log(removeDuplicates([23, 23, 23, 45, 45, 67, 89, 90, 90]));
+console.log(moveAllZerosToEnd([1, 0, 0, 0, 0, 2, 3, 4, 0, 5, 6, 7]));
