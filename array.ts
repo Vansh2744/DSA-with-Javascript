@@ -37,13 +37,30 @@
 
 //----------------Is Array Sorted-----------------
 
-function isArraySorted(arr: number[]): boolean {
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > arr[i + 1]) {
-      return false;
+// function isArraySorted(arr: number[]): boolean {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] > arr[i + 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isArraySorted([10, 2, 3, 4, 5, 6]));
+
+//------------------Remove Duplicates from Sorted Array----------------
+
+function removeDuplicates(arr: number[]): number[] {
+  let i = 0;
+
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
     }
   }
-  return true;
+
+  return arr.slice(0, i + 1);
 }
 
-console.log(isArraySorted([10, 2, 3, 4, 5, 6]));
+console.log(removeDuplicates([23, 23, 23, 45, 45, 67, 89, 90, 90]));
