@@ -71,7 +71,7 @@ class CircularQueue {
       return;
     } else {
       for (let i = 0; i < this.size; i++) {
-        console.log(this.queue[this.front + i]);
+        console.log(this.queue[(this.front + i) % this.capacity]);
       }
     }
   }
