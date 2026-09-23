@@ -1,13 +1,36 @@
-function findLargest(arr: number[]): number {
-  let l = arr[0];
+//-------------Largest Element-----------
+
+// function findLargest(arr: number[]): number {
+//   let l = arr[0];
+
+//   for (let i of arr) {
+//     if (i > l) {
+//       l = i;
+//     }
+//   }
+
+//   return l;
+// }
+
+// console.log(findLargest([34,56,78,90,12]));
+
+//--------------Second Largest Element---------
+
+function secondLargest(arr: number[]): number {
+  let fl = -Infinity;
+  let sl = -Infinity;
 
   for (let i of arr) {
-    if (i > l) {
-      l = i;
+    if (i > fl) {
+      sl = fl;
+      fl = i;
+    }
+    if (i > sl && i !== fl) {
+      sl = i;
     }
   }
 
-  return l;
+  return sl;
 }
 
-console.log(findLargest([34,56,78,90,12]));
+console.log(secondLargest([23, 56, 78, 90, 12, 10, 20, 89]));
