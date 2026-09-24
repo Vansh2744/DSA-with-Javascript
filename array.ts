@@ -67,16 +67,27 @@
 
 //--------------------Moving all zeroes to end--------------------
 
-function moveAllZerosToEnd(arr: number[]): number[] {
-  let i = 0;
-  for (let j = 0; j < arr.length; j++) {
-    if (arr[j] !== 0) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-      i++;
-    }
-  }
+// function moveAllZerosToEnd(arr: number[]): number[] {
+//   let i = 0;
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j] !== 0) {
+//       [arr[i], arr[j]] = [arr[j], arr[i]];
+//       i++;
+//     }
+//   }
+
+//   return arr;
+// }
+
+// console.log(moveAllZerosToEnd([1, 0, 0, 0, 0, 2, 3, 4, 0, 5, 6, 7]));
+
+//-------------------Rotate Array to left by One-------------------
+
+function rotateLeftByOne(arr: number[]): number[] {
+  const first = arr.shift() as number;
+  arr.push(first);
 
   return arr;
 }
 
-console.log(moveAllZerosToEnd([1, 0, 0, 0, 0, 2, 3, 4, 0, 5, 6, 7]));
+console.log(rotateLeftByOne([1, 2, 3, 4, 5]));
