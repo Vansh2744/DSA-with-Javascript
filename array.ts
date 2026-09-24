@@ -83,11 +83,39 @@
 
 //-------------------Rotate Array to left by One-------------------
 
-function rotateLeftByOne(arr: number[]): number[] {
-  const first = arr.shift() as number;
-  arr.push(first);
+// function rotateLeftByOne(arr: number[]): number[] {
+//   const first = arr.shift() as number;
+//   arr.push(first);
+
+//   return arr;
+// }
+
+// console.log(rotateLeftByOne([1, 2, 3, 4, 5]));
+
+//--------------------Rotate Array by k times----------------
+
+// [1,2,3,4,5]
+// [5,4,3,2,1]
+// [5,1,2,3,4]
+
+function rotateByK(arr: number[], k: number): number[] {
+  k %= arr.length;
+
+  arr = reverse(arr, 0, arr.length - 1);
+  arr = reverse(arr, 0, k - 1);
+  arr = reverse(arr, k, arr.length - 1);
+
+  return arr
+}
+
+function reverse(arr: number[], l: number, r: number): number[] {
+  while (l < r) {
+    [arr[l], arr[r]] = [arr[r], arr[l]];
+    l++;
+    r--;
+  }
 
   return arr;
 }
 
-console.log(rotateLeftByOne([1, 2, 3, 4, 5]));
+console.log(rotateByK([1,2,3,4,5],1));
