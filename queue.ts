@@ -43,4 +43,74 @@
 
 // console.log(queue.front());
 
-//------------
+//------------Implement Queue using Stack----------------
+
+class Queue {
+  stack1: number[];
+  stack2: number[];
+  constructor() {
+    this.stack1 = [];
+    this.stack2 = [];
+  }
+
+  enqueue(num: number) {
+    this.stack1.push(num);
+  }
+
+  dequeue(): number {
+    if (this.stack2.length === 0) {
+      while (this.stack1.length !== 0) {
+        this.stack2.push(this.stack1.pop() as number);
+      }
+      return this.stack2.pop() as number;
+    }
+
+    return this.stack2.pop() as number;
+  }
+
+  front(): number {
+    if (this.stack2.length === 0) {
+      while (this.stack1.length !== 0) {
+        this.stack2.push(this.stack1.pop() as number);
+      }
+      return this.stack2[0];
+    }
+
+    return this.stack2[0];
+  }
+
+  display() {
+    console.log("--------");
+
+    if (this.stack2.length === 0) {
+      while (this.stack1.length !== 0) {
+        this.stack2.push(this.stack1.pop() as number);
+      }
+      for (let num of this.stack2) {
+        console.log(num);
+      }
+      console.log("--------");
+      return;
+    }
+
+    for (let num of this.stack2) {
+      console.log(num);
+    }
+    console.log("--------");
+  }
+}
+
+const queue = new Queue();
+
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+queue.enqueue(40);
+
+queue.display();
+
+console.log(queue.front());
+
+console.log(queue.dequeue());
+
+queue.display();
